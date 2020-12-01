@@ -44,18 +44,7 @@ function draw(){
     image(carImage,car.position.x,car.position.y,35,35);
 
     spawnCoins();
-
-    if(keyPressed("right")){
-        car.velocityX = 9;
-    }
-
-    if(keyCode===27){
-        car.velocityX = -9;
-    }
-
-    if(keyDown("SPACE")){
-        car.velocityX = 0;
-    }
+    keyPressed();
 
     drawSprites();
 }
@@ -68,5 +57,19 @@ coins.addImage(coinsImg);
 coins.velocityX = -4;
 coins.y = Math.round(random(10,700));
 World.add(world,coins);
+    }
+}
+
+function keyPressed(){
+    if(keyCode===26){
+        car.velocityX = 9;
+    }
+
+    if(keyCode===27){
+        car.velocityX = -9;
+    }
+
+    if(keyCode===32){
+        car.velocityX = 0;
     }
 }
